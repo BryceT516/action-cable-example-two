@@ -18,6 +18,8 @@ class ChatroomsController < ApplicationController
     def create
         @chatroom = Chatroom.new(chatroom_params)
         if @chatroom.save
+            @chatroom.slugify
+            @chatroom.save
             respond_to do |format|
             format.html { redirect_to @chatroom }
             format.js

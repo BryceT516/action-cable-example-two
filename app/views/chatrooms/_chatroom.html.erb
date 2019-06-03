@@ -1,16 +1,5 @@
 <li>
-    <%
-        if chatroom
-            %>
-            <%
-            puts "chatroom exists"  
-            %>
-            <%= "Hello...#{chatroom.inspect}" %>
-            <%=
-            link_to chatroom.topic, chatroom_path(chatroom.slug) %>
-            <%
-        else
-            puts "chatroom doesn't exist"
-        end
+    <%=
+        link_to chatroom.topic, chatroom_path(chatroom.slug)
     %>
 </li>
